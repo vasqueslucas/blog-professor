@@ -1,0 +1,114 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "posts/regressao/index.html",
+    "href": "posts/regressao/index.html",
+    "title": "Atividade – Regressão Linear em Python",
+    "section": "",
+    "text": "Nesta atividade, apliquei o conceito de regressão linear simples utilizando Python.\nForam fornecidos três arquivos:\n\nlinear.py – código principal da regressão\n\nX.txt – valores da variável independente X\n\ny.txt – valores da variável dependente Y\n\nO objetivo foi:\n\nLer os dados dos arquivos.\nCalcular os coeficientes da regressão (inclinação b e intercepto a).\nGerar o gráfico da regressão.\nInterpretar os resultados obtidos."
+  },
+  {
+    "objectID": "posts/regressao/index.html#o-que-foi-pedido",
+    "href": "posts/regressao/index.html#o-que-foi-pedido",
+    "title": "Atividade – Regressão Linear em Python",
+    "section": "",
+    "text": "Nesta atividade, apliquei o conceito de regressão linear simples utilizando Python.\nForam fornecidos três arquivos:\n\nlinear.py – código principal da regressão\n\nX.txt – valores da variável independente X\n\ny.txt – valores da variável dependente Y\n\nO objetivo foi:\n\nLer os dados dos arquivos.\nCalcular os coeficientes da regressão (inclinação b e intercepto a).\nGerar o gráfico da regressão.\nInterpretar os resultados obtidos."
+  },
+  {
+    "objectID": "posts/regressao/index.html#execução-automática-do-código",
+    "href": "posts/regressao/index.html#execução-automática-do-código",
+    "title": "Atividade – Regressão Linear em Python",
+    "section": "✔ Execução automática do código",
+    "text": "✔ Execução automática do código\n~~~{python} import numpy as np from plotnine import *"
+  },
+  {
+    "objectID": "posts/regressao/index.html#gráfico-gerado-imagem-salva",
+    "href": "posts/regressao/index.html#gráfico-gerado-imagem-salva",
+    "title": "Atividade – Regressão Linear em Python",
+    "section": "✔ Gráfico gerado (imagem salva)",
+    "text": "✔ Gráfico gerado (imagem salva)\nAbaixo está o gráfico salvo em arquivo (por exemplo, grafico.png), incluído no post:"
+  },
+  {
+    "objectID": "posts/regressao/index.html#resultados-encontrados",
+    "href": "posts/regressao/index.html#resultados-encontrados",
+    "title": "Atividade – Regressão Linear em Python",
+    "section": "✔ Resultados encontrados",
+    "text": "✔ Resultados encontrados\n\nIntercepto (a): 373.934468391305\n\nInclinação (b): 991.6278332981968\n\nEsses valores indicam que, para cada aumento de 1 unidade em X,\nY aumenta aproximadamente 991,6 unidades, mostrando uma forte relação linear positiva entre as variáveis."
+  },
+  {
+    "objectID": "posts/regressao/index.html#comentários-finais",
+    "href": "posts/regressao/index.html#comentários-finais",
+    "title": "Atividade – Regressão Linear em Python",
+    "section": "✔ Comentários finais",
+    "text": "✔ Comentários finais\nNesta atividade, consegui:\n\nLer dados de arquivos de texto (X.txt e y.txt);\nAplicar a fórmula da regressão linear simples usando Numpy;\nGerar um gráfico de dispersão com reta de regressão usando Plotnine;\nInterpretar os coeficientes obtidos e o comportamento dos dados."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Atividade – Mapa de Ônibus com Python e API",
+    "section": "",
+    "text": "Nesta atividade, desenvolvi um código em Python para:\n\nConsumir uma API de transporte público (SPTrans);\nBuscar informações sobre uma linha de ônibus específica;\nGerar um mapa interativo marcando os pontos/paradas dessa linha;\nExibir esse mapa em um navegador ou dentro do próprio post.\n\nO foco da atividade é trabalhar com:\n\nConsumo de API (requisições HTTP);\nLeitura de dados em JSON;\nUso da biblioteca de mapas folium;\nOrganização do código em um arquivo .py."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#o-que-foi-pedido",
+    "href": "posts/post-with-code/index.html#o-que-foi-pedido",
+    "title": "Atividade – Mapa de Ônibus com Python e API",
+    "section": "",
+    "text": "Nesta atividade, desenvolvi um código em Python para:\n\nConsumir uma API de transporte público (SPTrans);\nBuscar informações sobre uma linha de ônibus específica;\nGerar um mapa interativo marcando os pontos/paradas dessa linha;\nExibir esse mapa em um navegador ou dentro do próprio post.\n\nO foco da atividade é trabalhar com:\n\nConsumo de API (requisições HTTP);\nLeitura de dados em JSON;\nUso da biblioteca de mapas folium;\nOrganização do código em um arquivo .py."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#arquivos-utilizados",
+    "href": "posts/post-with-code/index.html#arquivos-utilizados",
+    "title": "Atividade – Mapa de Ônibus com Python e API",
+    "section": "✔ Arquivos utilizados",
+    "text": "✔ Arquivos utilizados\n\nonibus_map.py → arquivo principal com o código em Python;\n.env → arquivo com a chave/token da API SPTrans (não é exibido no repositório);\nEste index.qmd → arquivo do post no blog, com explicação + execução do código.\n\n\nO arquivo .env guarda o token de acesso à API e não deve ser publicado em repositórios públicos, apenas usado localmente."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#código-principal-arquivo-onibus_map.py",
+    "href": "posts/post-with-code/index.html#código-principal-arquivo-onibus_map.py",
+    "title": "Atividade – Mapa de Ônibus com Python e API",
+    "section": "✔ Código principal (arquivo onibus_map.py)",
+    "text": "✔ Código principal (arquivo onibus_map.py)\nAbaixo está a chamada do script Python que gera o mapa.\nO código completo está no arquivo onibus_map.py.\n#| echo: true #| warning: false #| message: false\nimport onibus_map"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Atividade – Cotação do Dólar com API do Banco Central",
+    "section": "",
+    "text": "Nesta atividade, desenvolvi um código em Python para:\n\nConsumir a API PTAX do Banco Central do Brasil;\nBuscar a cotação do dólar (USD/BRL) em um período de datas;\nOrganizar os dados retornados em formato JSON;\nGerar uma tabela e um gráfico de linha mostrando a variação da cotação;\nSalvar o gráfico em arquivo e exibir o resultado.\n\nO foco da atividade é trabalhar com:\n\nRequisições HTTP (requests);\nLeitura e tratamento de dados em JSON;\nManipulação de datas;\nVisualização de dados com gráficos em Python."
+  },
+  {
+    "objectID": "posts/welcome/index.html#o-que-foi-pedido",
+    "href": "posts/welcome/index.html#o-que-foi-pedido",
+    "title": "Atividade – Cotação do Dólar com API do Banco Central",
+    "section": "",
+    "text": "Nesta atividade, desenvolvi um código em Python para:\n\nConsumir a API PTAX do Banco Central do Brasil;\nBuscar a cotação do dólar (USD/BRL) em um período de datas;\nOrganizar os dados retornados em formato JSON;\nGerar uma tabela e um gráfico de linha mostrando a variação da cotação;\nSalvar o gráfico em arquivo e exibir o resultado.\n\nO foco da atividade é trabalhar com:\n\nRequisições HTTP (requests);\nLeitura e tratamento de dados em JSON;\nManipulação de datas;\nVisualização de dados com gráficos em Python."
+  },
+  {
+    "objectID": "posts/welcome/index.html#arquivos-utilizados",
+    "href": "posts/welcome/index.html#arquivos-utilizados",
+    "title": "Atividade – Cotação do Dólar com API do Banco Central",
+    "section": "✔ Arquivos utilizados",
+    "text": "✔ Arquivos utilizados\n\ncotacao_dolar.py → arquivo principal com o código em Python;\nEste index.qmd → arquivo do post no blog, com explicação + execução do código.\n\n\nA API PTAX do Banco Central não exige token de autenticação, mas exige cuidado com o formato das datas na URL (padrão mm-dd-aaaa)."
+  },
+  {
+    "objectID": "posts/welcome/index.html#código-principal-arquivo-cotacao_dolar.py",
+    "href": "posts/welcome/index.html#código-principal-arquivo-cotacao_dolar.py",
+    "title": "Atividade – Cotação do Dólar com API do Banco Central",
+    "section": "✔ Código principal (arquivo cotacao_dolar.py)",
+    "text": "✔ Código principal (arquivo cotacao_dolar.py)\nAbaixo está a chamada do script Python que faz todo o processamento.\nO código completo está no arquivo cotacao_dolar.py, na mesma pasta deste post.\n#| echo: true #| warning: false #| message: false\nimport cotacao_dolar"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "blog-fodao",
+    "section": "",
+    "text": "Atividade – Mapa de Ônibus com Python e API\n\n\n\natividade\n\npython\n\nmapas\n\n\n\n\n\n\n\n\n\nNov 22, 2025\n\n\nLucas C. Vasques\n\n\n\n\n\n\n\n\n\n\n\n\nAtividade – Cotação do Dólar com API do Banco Central\n\n\n\natividade\n\npython\n\napi\n\neconomia\n\n\n\n\n\n\n\n\n\nNov 22, 2025\n\n\nLucas C. Vasques\n\n\n\n\n\n\n\n\n\n\n\n\nAtividade – Regressão Linear em Python\n\n\n\natividade\n\npython\n\nestatistica\n\n\n\n\n\n\n\n\n\nNov 21, 2025\n\n\nLucas C. Vasques\n\n\n\n\n\nNo matching items"
+  }
+]
