@@ -1,0 +1,58 @@
+---
+title: "Atividade – Cotação do Dólar com API do Banco Central"
+author: "Lucas C. Vasques"
+date: "2025-11-22"
+categories: [atividade, python, api, economia]
+format:
+  html:
+    toc: true
+    code-fold: true
+---
+
+## ✔ O que foi pedido
+
+Nesta atividade, desenvolvi um código em Python para:
+
+- Consumir a **API PTAX do Banco Central do Brasil**;
+- Buscar a **cotação do dólar (USD/BRL)** em um período de datas;
+- Organizar os dados retornados em formato JSON;
+- Gerar uma **tabela** e um **gráfico de linha** mostrando a variação da cotação;
+- Salvar o gráfico em arquivo e exibir o resultado.
+
+O foco da atividade é trabalhar com:
+
+- Requisições HTTP (`requests`);
+- Leitura e tratamento de dados em JSON;
+- Manipulação de datas;
+- Visualização de dados com gráficos em Python.
+
+---
+
+## ✔ Arquivos utilizados
+
+- `cotacao_dolar.py` → arquivo principal com o código em Python;
+- Este `index.qmd` → arquivo do post no blog, com explicação + execução do código.
+
+> A API PTAX do Banco Central não exige token de autenticação, mas exige cuidado com o formato das datas na URL (padrão `mm-dd-aaaa`).
+
+---
+
+## ✔ Código principal (arquivo `cotacao_dolar.py`)
+
+Abaixo está a chamada do script Python que faz todo o processamento.  
+O código completo está no arquivo `cotacao_dolar.py`, na mesma pasta deste post.
+
+```{python}
+#| echo: true
+#| warning: false
+#| message: false
+
+import cotacao_dolar
+
+# A função gerar_grafico_cotacao() é responsável por:
+# - fazer a requisição na API PTAX
+# - tratar o JSON
+# - montar um DataFrame com as datas e cotações
+# - gerar um gráfico da cotação no período
+# - salvar o gráfico como grafico_cotacao.png
+cotacao_dolar.gerar_grafico_cotacao()

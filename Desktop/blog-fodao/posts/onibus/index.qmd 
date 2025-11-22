@@ -1,0 +1,59 @@
+---
+title: "Atividade – Mapa de Ônibus com Python e API"
+author: "Lucas C. Vasques"
+date: "2025-11-22"
+categories: [atividade, python, mapas]
+format:
+  html:
+    toc: true
+    code-fold: true
+---
+
+## ✔ O que foi pedido
+
+Nesta atividade, desenvolvi um código em Python para:
+
+- Consumir uma API de transporte público (SPTrans);
+- Buscar informações sobre uma linha de ônibus específica;
+- Gerar um **mapa interativo** marcando os pontos/paradas dessa linha;
+- Exibir esse mapa em um navegador ou dentro do próprio post.
+
+O foco da atividade é trabalhar com:
+
+- Consumo de API (requisições HTTP);
+- Leitura de dados em JSON;
+- Uso da biblioteca de mapas `folium`;
+- Organização do código em um arquivo `.py`.
+
+---
+
+## ✔ Arquivos utilizados
+
+Dentro da pasta deste post (`posts/onibus/`) utilizei os seguintes arquivos:
+
+- `onibus_map.py` → arquivo principal com o código em Python;
+- `.env` → arquivo com a chave/token da API SPTrans (não é exibido no repositório);
+- Este `index.qmd` → arquivo do post no blog, com explicação + execução do código.
+
+> O arquivo `.env` guarda o token de acesso à API e **não deve ser publicado em repositórios públicos**, apenas usado localmente.
+
+---
+
+## ✔ Código principal (arquivo `onibus_map.py`)
+
+Abaixo está a chamada do script Python que gera o mapa.  
+O código completo está no arquivo `onibus_map.py`, na mesma pasta deste post.
+
+```{python}
+#| echo: true
+#| warning: false
+#| message: false
+
+import onibus_map
+
+# A função generate_map() é responsável por:
+# - autenticar na API da SPTrans
+# - buscar as paradas da linha
+# - montar o mapa com folium
+# - salvar o arquivo mapa_onibus.html dentro de posts/onibus/
+onibus_map.generate_map()

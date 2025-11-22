@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>blog-fodao</title>
+<link>https://your-website-url.example.com/</link>
+<atom:link href="https://your-website-url.example.com/index.xml" rel="self" type="application/rss+xml"/>
+<description>A blog built with Quarto</description>
+<generator>quarto-1.8.26</generator>
+<lastBuildDate>Sat, 22 Nov 2025 03:00:00 GMT</lastBuildDate>
+<item>
+  <title>Atividade – Mapa de Ônibus com Python e API</title>
+  <dc:creator>Lucas C. Vasques</dc:creator>
+  <link>https://your-website-url.example.com/posts/post-with-code/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="o-que-foi-pedido" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-foi-pedido">✔ O que foi pedido</h2>
+<p>Nesta atividade, desenvolvi um código em Python para:</p>
+<ul>
+<li>Consumir uma API de transporte público (SPTrans);</li>
+<li>Buscar informações sobre uma linha de ônibus específica;</li>
+<li>Gerar um <strong>mapa interativo</strong> marcando os pontos/paradas dessa linha;</li>
+<li>Exibir esse mapa em um navegador ou dentro do próprio post.</li>
+</ul>
+<p>O foco da atividade é trabalhar com:</p>
+<ul>
+<li>Consumo de API (requisições HTTP);</li>
+<li>Leitura de dados em JSON;</li>
+<li>Uso da biblioteca de mapas <code>folium</code>;</li>
+<li>Organização do código em um arquivo <code>.py</code>.</li>
+</ul>
+<hr>
+</section>
+<section id="arquivos-utilizados" class="level2">
+<h2 class="anchored" data-anchor-id="arquivos-utilizados">✔ Arquivos utilizados</h2>
+<ul>
+<li><code>onibus_map.py</code> → arquivo principal com o código em Python;</li>
+<li><code>.env</code> → arquivo com a chave/token da API SPTrans (não é exibido no repositório);</li>
+<li>Este <code>index.qmd</code> → arquivo do post no blog, com explicação + execução do código.</li>
+</ul>
+<blockquote class="blockquote">
+<p>O arquivo <code>.env</code> guarda o token de acesso à API e <strong>não deve ser publicado em repositórios públicos</strong>, apenas usado localmente.</p>
+</blockquote>
+<hr>
+</section>
+<section id="código-principal-arquivo-onibus_map.py" class="level2">
+<h2 class="anchored" data-anchor-id="código-principal-arquivo-onibus_map.py">✔ Código principal (arquivo <code>onibus_map.py</code>)</h2>
+<p>Abaixo está a chamada do script Python que gera o mapa.<br>
+O código completo está no arquivo <code>onibus_map.py</code>.</p>
+<p>#| echo: true #| warning: false #| message: false</p>
+<p>import onibus_map</p>
+</section>
+<section id="a-função-generate_map-é-responsável-por" class="level1">
+<h1>A função generate_map() é responsável por:</h1>
+</section>
+<section id="autenticar-na-api-da-sptrans" class="level1">
+<h1>- autenticar na API da SPTrans</h1>
+</section>
+<section id="buscar-as-paradas-da-linha" class="level1">
+<h1>- buscar as paradas da linha</h1>
+</section>
+<section id="montar-o-mapa-com-folium" class="level1">
+<h1>- montar o mapa com folium</h1>
+</section>
+<section id="salvar-o-arquivo-mapa_onibus.html-dentro-de-postsonibus" class="level1">
+<h1>- salvar o arquivo mapa_onibus.html dentro de posts/onibus/</h1>
+<p>onibus_map.generate_map()</p>
+
+
+</section>
+
+ ]]></description>
+  <category>atividade</category>
+  <category>python</category>
+  <category>mapas</category>
+  <guid>https://your-website-url.example.com/posts/post-with-code/</guid>
+  <pubDate>Sat, 22 Nov 2025 03:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Atividade – Cotação do Dólar com API do Banco Central</title>
+  <dc:creator>Lucas C. Vasques</dc:creator>
+  <link>https://your-website-url.example.com/posts/welcome/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="o-que-foi-pedido" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-foi-pedido">✔ O que foi pedido</h2>
+<p>Nesta atividade, desenvolvi um código em Python para:</p>
+<ul>
+<li>Consumir a <strong>API PTAX do Banco Central do Brasil</strong>;</li>
+<li>Buscar a <strong>cotação do dólar (USD/BRL)</strong> em um período de datas;</li>
+<li>Organizar os dados retornados em formato JSON;</li>
+<li>Gerar uma <strong>tabela</strong> e um <strong>gráfico de linha</strong> mostrando a variação da cotação;</li>
+<li>Salvar o gráfico em arquivo e exibir o resultado.</li>
+</ul>
+<p>O foco da atividade é trabalhar com:</p>
+<ul>
+<li>Requisições HTTP (<code>requests</code>);</li>
+<li>Leitura e tratamento de dados em JSON;</li>
+<li>Manipulação de datas;</li>
+<li>Visualização de dados com gráficos em Python.</li>
+</ul>
+<hr>
+</section>
+<section id="arquivos-utilizados" class="level2">
+<h2 class="anchored" data-anchor-id="arquivos-utilizados">✔ Arquivos utilizados</h2>
+<ul>
+<li><code>cotacao_dolar.py</code> → arquivo principal com o código em Python;</li>
+<li>Este <code>index.qmd</code> → arquivo do post no blog, com explicação + execução do código.</li>
+</ul>
+<blockquote class="blockquote">
+<p>A API PTAX do Banco Central não exige token de autenticação, mas exige cuidado com o formato das datas na URL (padrão <code>mm-dd-aaaa</code>).</p>
+</blockquote>
+<hr>
+</section>
+<section id="código-principal-arquivo-cotacao_dolar.py" class="level2">
+<h2 class="anchored" data-anchor-id="código-principal-arquivo-cotacao_dolar.py">✔ Código principal (arquivo <code>cotacao_dolar.py</code>)</h2>
+<p>Abaixo está a chamada do script Python que faz todo o processamento.<br>
+O código completo está no arquivo <code>cotacao_dolar.py</code>, na mesma pasta deste post.</p>
+<p>#| echo: true #| warning: false #| message: false</p>
+<p>import cotacao_dolar</p>
+</section>
+<section id="a-função-gerar_grafico_cotacao-é-responsável-por" class="level1">
+<h1>A função gerar_grafico_cotacao() é responsável por:</h1>
+</section>
+<section id="fazer-a-requisição-na-api-ptax" class="level1">
+<h1>- fazer a requisição na API PTAX</h1>
+</section>
+<section id="tratar-o-json" class="level1">
+<h1>- tratar o JSON</h1>
+</section>
+<section id="montar-um-dataframe-com-as-datas-e-cotações" class="level1">
+<h1>- montar um DataFrame com as datas e cotações</h1>
+</section>
+<section id="gerar-um-gráfico-da-cotação-no-período" class="level1">
+<h1>- gerar um gráfico da cotação no período</h1>
+</section>
+<section id="salvar-o-gráfico-como-grafico_cotacao.png" class="level1">
+<h1>- salvar o gráfico como grafico_cotacao.png</h1>
+<p>cotacao_dolar.gerar_grafico_cotacao()</p>
+
+
+</section>
+
+ ]]></description>
+  <category>atividade</category>
+  <category>python</category>
+  <category>api</category>
+  <category>economia</category>
+  <guid>https://your-website-url.example.com/posts/welcome/</guid>
+  <pubDate>Sat, 22 Nov 2025 03:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Atividade – Regressão Linear em Python</title>
+  <dc:creator>Lucas C. Vasques</dc:creator>
+  <link>https://your-website-url.example.com/posts/regressao/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="o-que-foi-pedido" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-foi-pedido">✔ O que foi pedido</h2>
+<p>Nesta atividade, apliquei o conceito de <strong>regressão linear simples</strong> utilizando Python.<br>
+Foram fornecidos três arquivos:</p>
+<ul>
+<li><code>linear.py</code> – código principal da regressão<br>
+</li>
+<li><code>X.txt</code> – valores da variável independente X<br>
+</li>
+<li><code>y.txt</code> – valores da variável dependente Y</li>
+</ul>
+<p>O objetivo foi:</p>
+<ol type="1">
+<li>Ler os dados dos arquivos.</li>
+<li>Calcular os coeficientes da regressão (inclinação <strong>b</strong> e intercepto <strong>a</strong>).</li>
+<li>Gerar o gráfico da regressão.</li>
+<li>Interpretar os resultados obtidos.</li>
+</ol>
+<hr>
+</section>
+<section id="execução-automática-do-código" class="level2">
+<h2 class="anchored" data-anchor-id="execução-automática-do-código">✔ Execução automática do código</h2>
+<p>~~~{python} import numpy as np from plotnine import *</p>
+</section>
+<section id="carrega-x-e-y-a-partir-dos-arquivos" class="level1">
+<h1>1. Carrega X e Y a partir dos arquivos</h1>
+<p>X = np.loadtxt(“X.txt”) y = np.loadtxt(“y.txt”)</p>
+</section>
+<section id="cálculo-dos-coeficientes-da-regressão" class="level1">
+<h1>2. Cálculo dos coeficientes da regressão</h1>
+</section>
+<section id="b-covx-y-varx" class="level1">
+<h1>b = cov(X, Y) / var(X)</h1>
+</section>
+<section id="a-médiay---b-médiax" class="level1">
+<h1>a = média(Y) - b * média(X)</h1>
+<p>b = np.cov(X, y, bias=True)[0][1] / np.var(X) a = y.mean() - b * X.mean()</p>
+<p>print(“Intercepto (a):”, a) print(“Inclinação (b):”, b)</p>
+</section>
+<section id="preparando-dados-para-o-gráfico" class="level1">
+<h1>3. Preparando dados para o gráfico</h1>
+<p>df = {“X”: X, “y”: y}</p>
+<p>plot = ( ggplot(df, aes(“X”, “y”)) + geom_point(color=“blue”) + geom_smooth(method=“lm”, color=“red”) + labs(title=“Regressão Linear”, x=“X”, y=“y”) )</p>
+<p>plot ~~~</p>
+<hr>
+<section id="gráfico-gerado-imagem-salva" class="level2">
+<h2 class="anchored" data-anchor-id="gráfico-gerado-imagem-salva">✔ Gráfico gerado (imagem salva)</h2>
+<p>Abaixo está o gráfico salvo em arquivo (por exemplo, <code>grafico.png</code>), incluído no post:</p>
+<p><img src="https://your-website-url.example.com/posts/regressao/grafico.png" class="img-fluid"></p>
+<hr>
+</section>
+<section id="resultados-encontrados" class="level2">
+<h2 class="anchored" data-anchor-id="resultados-encontrados">✔ Resultados encontrados</h2>
+<ul>
+<li><strong>Intercepto (a):</strong> 373.934468391305<br>
+</li>
+<li><strong>Inclinação (b):</strong> 991.6278332981968</li>
+</ul>
+<p>Esses valores indicam que, para cada aumento de 1 unidade em X,<br>
+<strong>Y aumenta aproximadamente 991,6 unidades</strong>, mostrando uma forte relação linear positiva entre as variáveis.</p>
+<hr>
+</section>
+<section id="comentários-finais" class="level2">
+<h2 class="anchored" data-anchor-id="comentários-finais">✔ Comentários finais</h2>
+<p>Nesta atividade, consegui:</p>
+<ul>
+<li>Ler dados de arquivos de texto (<code>X.txt</code> e <code>y.txt</code>);</li>
+<li>Aplicar a fórmula da regressão linear simples usando Numpy;</li>
+<li>Gerar um gráfico de dispersão com reta de regressão usando Plotnine;</li>
+<li>Interpretar os coeficientes obtidos e o comportamento dos dados.</li>
+</ul>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>atividade</category>
+  <category>python</category>
+  <category>estatistica</category>
+  <guid>https://your-website-url.example.com/posts/regressao/</guid>
+  <pubDate>Fri, 21 Nov 2025 03:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,85 @@
+---
+title: "Atividade – Regressão Linear em Python"
+author: "Lucas C. Vasques"
+date: "2025-11-21"
+categories: [atividade, python, estatistica]
+---
+
+## ✔ O que foi pedido
+Nesta atividade, apliquei o conceito de **regressão linear simples** utilizando Python.  
+Foram fornecidos três arquivos:
+
+- `linear.py` – código principal da regressão  
+- `X.txt` – valores da variável independente X  
+- `y.txt` – valores da variável dependente Y  
+
+O objetivo foi:
+
+1. Ler os dados dos arquivos.
+2. Calcular os coeficientes da regressão (inclinação **b** e intercepto **a**).
+3. Gerar o gráfico da regressão.
+4. Interpretar os resultados obtidos.
+
+---
+
+## ✔ Execução automática do código
+
+~~~{python}
+import numpy as np
+from plotnine import *
+
+# 1. Carrega X e Y a partir dos arquivos
+X = np.loadtxt("X.txt")
+y = np.loadtxt("y.txt")
+
+# 2. Cálculo dos coeficientes da regressão
+# b = cov(X, Y) / var(X)
+# a = média(Y) - b * média(X)
+
+b = np.cov(X, y, bias=True)[0][1] / np.var(X)
+a = y.mean() - b * X.mean()
+
+print("Intercepto (a):", a)
+print("Inclinação (b):", b)
+
+# 3. Preparando dados para o gráfico
+df = {"X": X, "y": y}
+
+plot = (
+    ggplot(df, aes("X", "y"))
+    + geom_point(color="blue")
+    + geom_smooth(method="lm", color="red")
+    + labs(title="Regressão Linear", x="X", y="y")
+)
+
+plot
+~~~
+
+---
+
+## ✔ Gráfico gerado (imagem salva)
+
+Abaixo está o gráfico salvo em arquivo (por exemplo, `grafico.png`), incluído no post:
+
+![](grafico.png)
+
+---
+
+## ✔ Resultados encontrados
+
+- **Intercepto (a):** 373.934468391305  
+- **Inclinação (b):** 991.6278332981968  
+
+Esses valores indicam que, para cada aumento de 1 unidade em X,  
+**Y aumenta aproximadamente 991,6 unidades**, mostrando uma forte relação linear positiva entre as variáveis.
+
+---
+
+## ✔ Comentários finais
+
+Nesta atividade, consegui:
+
+- Ler dados de arquivos de texto (`X.txt` e `y.txt`);
+- Aplicar a fórmula da regressão linear simples usando Numpy;
+- Gerar um gráfico de dispersão com reta de regressão usando Plotnine;
+- Interpretar os coeficientes obtidos e o comportamento dos dados.
