@@ -5,15 +5,15 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>blog-fodao</title>
-<link>https://your-website-url.example.com/</link>
-<atom:link href="https://your-website-url.example.com/index.xml" rel="self" type="application/rss+xml"/>
-<description>A blog built with Quarto</description>
+<title>Blog do Professor</title>
+<link>https://vasqueslucas.github.io/blog-professor/</link>
+<atom:link href="https://vasqueslucas.github.io/blog-professor/index.xml" rel="self" type="application/rss+xml"/>
+<description>Atividades e análises feitas em Python</description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Mon, 24 Nov 2025 14:57:32 GMT</lastBuildDate>
+<lastBuildDate>Mon, 24 Nov 2025 15:02:00 GMT</lastBuildDate>
 <item>
   <title>Mapa de Paradas de Ônibus – Linha 2506</title>
-  <link>https://your-website-url.example.com/posts/post-with-code/</link>
+  <link>https://vasqueslucas.github.io/blog-professor/posts/post-with-code/</link>
   <description><![CDATA[ 
 
 
@@ -165,7 +165,7 @@ Essa abordagem pode ser usada para qualquer linha da SPTrans, bastando trocar o 
 <p>A figura abaixo mostra todas as paradas da linha 2506 plotadas no mapa, usando Folium.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://your-website-url.example.com/posts/post-with-code/map.png" class="img-fluid figure-img"></p>
+<p><img src="https://vasqueslucas.github.io/blog-professor/posts/post-with-code/map.png" class="img-fluid figure-img"></p>
 <figcaption>Mapa das paradas da linha 2506</figcaption>
 </figure>
 </div>
@@ -185,12 +185,12 @@ Essa abordagem pode ser usada para qualquer linha da SPTrans, bastando trocar o 
 </section>
 
  ]]></description>
-  <guid>https://your-website-url.example.com/posts/post-with-code/</guid>
-  <pubDate>Mon, 24 Nov 2025 14:57:32 GMT</pubDate>
+  <guid>https://vasqueslucas.github.io/blog-professor/posts/post-with-code/</guid>
+  <pubDate>Mon, 24 Nov 2025 15:02:00 GMT</pubDate>
 </item>
 <item>
   <title>Cotação do Dólar – Agosto de 2022</title>
-  <link>https://your-website-url.example.com/posts/welcome/</link>
+  <link>https://vasqueslucas.github.io/blog-professor/posts/welcome/</link>
   <description><![CDATA[ 
 
 
@@ -546,7 +546,7 @@ font-style: inherit;">"082022"</span>)</span></code></pre></div></div>
 <p>A figura gerada foi salva como <code>grafico_cotacao_dolar.png</code> na mesma pasta do projeto, e abaixo ela é exibida no post:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://your-website-url.example.com/posts/welcome/grafico_cotacao_dolar.png" class="img-fluid figure-img"></p>
+<p><img src="https://vasqueslucas.github.io/blog-professor/posts/welcome/grafico_cotacao_dolar.png" class="img-fluid figure-img"></p>
 <figcaption>Gráfico da cotação do dólar em Agosto de 2022</figcaption>
 </figure>
 </div>
@@ -584,12 +584,12 @@ font-style: inherit;">"012021"</span>)</span></code></pre></div></div>
 </section>
 
  ]]></description>
-  <guid>https://your-website-url.example.com/posts/welcome/</guid>
-  <pubDate>Mon, 24 Nov 2025 14:57:32 GMT</pubDate>
+  <guid>https://vasqueslucas.github.io/blog-professor/posts/welcome/</guid>
+  <pubDate>Mon, 24 Nov 2025 15:02:00 GMT</pubDate>
 </item>
 <item>
   <title>Regressão Linear em Python</title>
-  <link>https://your-website-url.example.com/posts/regressao/</link>
+  <link>https://vasqueslucas.github.io/blog-professor/posts/regressao/</link>
   <description><![CDATA[ 
 
 
@@ -721,7 +721,7 @@ font-style: inherit;">"grafico.png"</span>)</span></code></pre></div></div>
 e está incluído abaixo:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://your-website-url.example.com/posts/regressao/grafico.png" class="img-fluid figure-img"></p>
+<p><img src="https://vasqueslucas.github.io/blog-professor/posts/regressao/grafico.png" class="img-fluid figure-img"></p>
 <figcaption>Gráfico da regressão linear</figcaption>
 </figure>
 </div>
@@ -744,8 +744,8 @@ mostrando uma relação linear positiva forte entre as variáveis.</p>
 </section>
 
  ]]></description>
-  <guid>https://your-website-url.example.com/posts/regressao/</guid>
-  <pubDate>Mon, 24 Nov 2025 14:57:32 GMT</pubDate>
+  <guid>https://vasqueslucas.github.io/blog-professor/posts/regressao/</guid>
+  <pubDate>Mon, 24 Nov 2025 15:02:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
