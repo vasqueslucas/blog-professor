@@ -9,8 +9,13 @@
 <link>https://vasqueslucas.github.io/blog-professor/</link>
 <atom:link href="https://vasqueslucas.github.io/blog-professor/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
+<image>
+<url>https://vasqueslucas.github.io/blog-professor/lucas.JPG</url>
+<title>Blog Acadêmico – Lucas C. Vasques</title>
+<link>https://vasqueslucas.github.io/blog-professor/</link>
+</image>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Mon, 24 Nov 2025 16:21:08 GMT</lastBuildDate>
+<lastBuildDate>Mon, 24 Nov 2025 17:14:45 GMT</lastBuildDate>
 <item>
   <title>Mapa de Paradas de Ônibus – Linha 2506</title>
   <link>https://vasqueslucas.github.io/blog-professor/posts/post-with-code/</link>
@@ -186,7 +191,7 @@ Essa abordagem pode ser usada para qualquer linha da SPTrans, bastando trocar o 
 
  ]]></description>
   <guid>https://vasqueslucas.github.io/blog-professor/posts/post-with-code/</guid>
-  <pubDate>Mon, 24 Nov 2025 16:21:08 GMT</pubDate>
+  <pubDate>Mon, 24 Nov 2025 17:14:45 GMT</pubDate>
 </item>
 <item>
   <title>Cotação do Dólar – Agosto de 2022</title>
@@ -585,7 +590,7 @@ font-style: inherit;">"012021"</span>)</span></code></pre></div></div>
 
  ]]></description>
   <guid>https://vasqueslucas.github.io/blog-professor/posts/welcome/</guid>
-  <pubDate>Mon, 24 Nov 2025 16:21:08 GMT</pubDate>
+  <pubDate>Mon, 24 Nov 2025 17:14:45 GMT</pubDate>
 </item>
 <item>
   <title>Regressão Linear em Python</title>
@@ -745,7 +750,7 @@ mostrando uma relação linear positiva forte entre as variáveis.</p>
 
  ]]></description>
   <guid>https://vasqueslucas.github.io/blog-professor/posts/regressao/</guid>
-  <pubDate>Mon, 24 Nov 2025 16:21:08 GMT</pubDate>
+  <pubDate>Mon, 24 Nov 2025 17:14:45 GMT</pubDate>
 </item>
 </channel>
 </rss>
