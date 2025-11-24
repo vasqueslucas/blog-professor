@@ -9,13 +9,8 @@
 <link>https://your-website-url.example.com/Desktop/blog-fodao/</link>
 <atom:link href="https://your-website-url.example.com/Desktop/blog-fodao/index.xml" rel="self" type="application/rss+xml"/>
 <description>A blog built with Quarto</description>
-<image>
-<url>https://your-website-url.example.com/lucas.JPG</url>
-<title>blog-fodao</title>
-<link>https://your-website-url.example.com/Desktop/blog-fodao/</link>
-</image>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Mon, 24 Nov 2025 17:35:34 GMT</lastBuildDate>
+<lastBuildDate>Mon, 24 Nov 2025 17:38:10 GMT</lastBuildDate>
 <item>
   <title>Mapa de Paradas de Ônibus – Linha 2506</title>
   <link>https://your-website-url.example.com/Desktop/blog-fodao/posts/post-with-code/</link>
@@ -191,7 +186,7 @@ Essa abordagem pode ser usada para qualquer linha da SPTrans, bastando trocar o 
 
  ]]></description>
   <guid>https://your-website-url.example.com/Desktop/blog-fodao/posts/post-with-code/</guid>
-  <pubDate>Mon, 24 Nov 2025 17:35:34 GMT</pubDate>
+  <pubDate>Mon, 24 Nov 2025 17:38:10 GMT</pubDate>
 </item>
 <item>
   <title>Cotação do Dólar – Agosto de 2022</title>
@@ -590,7 +585,7 @@ font-style: inherit;">"012021"</span>)</span></code></pre></div></div>
 
  ]]></description>
   <guid>https://your-website-url.example.com/Desktop/blog-fodao/posts/welcome/</guid>
-  <pubDate>Mon, 24 Nov 2025 17:35:34 GMT</pubDate>
+  <pubDate>Mon, 24 Nov 2025 17:38:10 GMT</pubDate>
 </item>
 <item>
   <title>Regressão Linear em Python</title>
@@ -750,7 +745,7 @@ mostrando uma relação linear positiva forte entre as variáveis.</p>
 
  ]]></description>
   <guid>https://your-website-url.example.com/Desktop/blog-fodao/posts/regressao/</guid>
-  <pubDate>Mon, 24 Nov 2025 17:35:34 GMT</pubDate>
+  <pubDate>Mon, 24 Nov 2025 17:38:10 GMT</pubDate>
 </item>
 </channel>
 </rss>
