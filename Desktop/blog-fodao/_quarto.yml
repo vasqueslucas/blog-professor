@@ -2,22 +2,20 @@ project:
   type: website
 
 website:
-  description: "A blog built with Quarto"
-  site-url: https://your-website-url.example.com # you must change this appropriately for RSS feeds to work properly
-  title: "blog-fodao"
+  title: "Blog Acadêmico – Lucas C. Vasques"
+  site-url: "https://vasqueslucas.github.io/blog-professor/"
   navbar:
     right:
-      - about.qmd
-      - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+      - text: "Início"
+        href: index.qmd
+      - text: "Sobre"
+        href: about.qmd
+      - text: "Posts"
+        href: posts/
+
 format:
   html:
     theme:
-      - cosmo
-      - brand
+      light: cosmo
     css: styles.css
-
-
-
+    toc: true

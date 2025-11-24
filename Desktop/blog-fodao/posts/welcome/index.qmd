@@ -1,58 +1,167 @@
 ---
-title: "Atividade – Cotação do Dólar com API do Banco Central"
-author: "Lucas C. Vasques"
-date: "2025-11-22"
-categories: [atividade, python, api, economia]
-format:
-  html:
-    toc: true
-    code-fold: true
+title: "Cotação do Dólar – Agosto de 2022"
 ---
 
-## ✔ O que foi pedido
+# Cotação do Dólar
 
-Nesta atividade, desenvolvi um código em Python para:
+A primeira atividade deste projeto foi estudar o uso de **APIs** usando o serviço **Olinda** do Banco Central, para consultar a cotação do dólar em certo período.
 
-- Consumir a **API PTAX do Banco Central do Brasil**;
-- Buscar a **cotação do dólar (USD/BRL)** em um período de datas;
-- Organizar os dados retornados em formato JSON;
-- Gerar uma **tabela** e um **gráfico de linha** mostrando a variação da cotação;
-- Salvar o gráfico em arquivo e exibir o resultado.
+Mais especificamente, o objetivo aqui foi: dado um **mês** e um **ano**, construir um **gráfico das cotações do dólar** naquele mês, usando o endpoint:
 
-O foco da atividade é trabalhar com:
+`/CotacaoDolarPeriodo`
 
-- Requisições HTTP (`requests`);
-- Leitura e tratamento de dados em JSON;
-- Manipulação de datas;
-- Visualização de dados com gráficos em Python.
+da API do Banco Central.
 
 ---
 
-## ✔ Arquivos utilizados
+## O desafio
 
-- `cotacao_dolar.py` → arquivo principal com o código em Python;
-- Este `index.qmd` → arquivo do post no blog, com explicação + execução do código.
+O desafio proposto foi:
 
-> A API PTAX do Banco Central não exige token de autenticação, mas exige cuidado com o formato das datas na URL (padrão `mm-dd-aaaa`).
+> Dado um mês/ano, consultar as cotações do dólar naquele período e gerar um gráfico mostrando a **cotação de venda** ao longo do tempo.
+
+A API espera duas informações:
+
+- `dataInicial`
+- `dataFinalCotacao`
+
+ambas no formato **MM-DD-YYYY**.  
+Por isso, a primeira parte do código é só transformar o texto do mês (por exemplo `"082022"`) em duas datas: **primeiro e último dia do mês**.
 
 ---
 
-## ✔ Código principal (arquivo `cotacao_dolar.py`)
+## O código
 
-Abaixo está a chamada do script Python que faz todo o processamento.  
-O código completo está no arquivo `cotacao_dolar.py`, na mesma pasta deste post.
+A função abaixo recebe uma string no formato `"mmAAAA"` (por exemplo `082022` para agosto de 2022) e:
 
-```{python}
-#| echo: true
-#| warning: false
-#| message: false
+1. Calcula o primeiro e o último dia do mês,
+2. Monta a URL correta da API,
+3. Faz a requisição com `requests`,
+4. Coloca o resultado em um `DataFrame` do `pandas`,
+5. Gera o gráfico com `plotly.express`.
 
-import cotacao_dolar
+```python
+import calendar
+from datetime import datetime
+import requests
+import pandas as pd
+import plotly.express as px
 
-# A função gerar_grafico_cotacao() é responsável por:
-# - fazer a requisição na API PTAX
-# - tratar o JSON
-# - montar um DataFrame com as datas e cotações
-# - gerar um gráfico da cotação no período
-# - salvar o gráfico como grafico_cotacao.png
-cotacao_dolar.gerar_grafico_cotacao()
+URL_BASE = (
+    "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/"
+    "CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)"
+)
+
+def datas_mes(mes_ano: str) -> tuple[datetime, datetime]:
+    """
+    Recebe uma string no formato 'mmAAAA' (ex.: '082022')
+    e devolve (data_inicial, data_final) daquele mês.
+    """
+    data_inicial = datetime.strptime(mes_ano, "%m%Y")
+    ultimo_dia = calendar.monthrange(data_inicial.year, data_inicial.month)[1]
+    data_final = data_inicial.replace(day=ultimo_dia)
+    return data_inicial, data_final
+
+
+def montar_url(data_inicial: datetime, data_final: datetime) -> str:
+    """
+    Monta a URL da API, com as datas no formato exigido (MM-DD-YYYY).
+    """
+    di = data_inicial.strftime("%m-%d-%Y")
+    df = data_final.strftime("%m-%d-%Y")
+
+    url = (
+        f"{URL_BASE}"
+        f"?@dataInicial='{di}'"
+        f"&@dataFinalCotacao='{df}'"
+        f"&$top=100&$format=json"
+    )
+    return url
+
+
+def grafico_cotacao(mes_ano: str):
+    """
+    Consulta a API do Banco Central e gera um gráfico com a cotação de venda do dólar.
+    Também salva a figura como 'grafico_cotacao_dolar.png'.
+    """
+    data_inicial, data_final = datas_mes(mes_ano)
+    url = montar_url(data_inicial, data_final)
+
+    res = requests.get(url)
+    res.raise_for_status()
+
+    dados = res.json()
+
+    if not dados.get("value"):
+        print("Nenhum dado encontrado para o período informado.")
+        return
+
+    # Colocando os dados em um DataFrame
+    df = pd.DataFrame(dados["value"])
+
+    # Convertendo a coluna de data para datetime
+    df["dataHoraCotacao"] = pd.to_datetime(df["dataHoraCotacao"])
+
+    # Construindo o gráfico
+    fig = px.line(
+        df,
+        x="dataHoraCotacao",
+        y="cotacaoVenda",
+        title=f"Cotação do Dólar - {data_inicial.strftime('%B/%Y').capitalize()}",
+        labels={
+            "dataHoraCotacao": "Data",
+            "cotacaoVenda": "Cotação de venda (R$)",
+        },
+        markers=True,
+    )
+
+    # Salva a figura como imagem para usar no blog
+    fig.write_image("grafico_cotacao_dolar.png")
+
+    # Mostra o gráfico interativo também
+    fig.show()
+
+
+if __name__ == "__main__":
+    # Exemplo: Agosto de 2022
+    grafico_cotacao("082022")
+```
+
+---
+
+## Os resultados
+
+Executando o script, o programa gera um **gráfico da cotação de venda do dólar** ao longo do mês escolhido.
+
+A figura gerada foi salva como `grafico_cotacao_dolar.png` na mesma pasta do projeto, e abaixo ela é exibida no post:
+
+![Gráfico da cotação do dólar em Agosto de 2022](grafico_cotacao_dolar.png)
+
+Podemos ver a variação diária da cotação e ter uma ideia de como o dólar se comportou naquele período.
+
+---
+
+## Observações
+
+- É preciso instalar as bibliotecas usadas:
+
+```bash
+pip install requests pandas plotly kaleido
+```
+
+> O `kaleido` é usado pelo `plotly` para conseguir exportar o gráfico como **PNG**.
+
+- Para trocar o mês, basta mudar a chamada:
+
+```python
+grafico_cotacao("082022")
+```
+
+por outro mês/ano, como:
+
+```python
+grafico_cotacao("052014")
+grafico_cotacao("012021")
+```
+
+---

@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Lucas C. Vasques">
-<meta name="dcterms.date" content="2025-11-21">
 
-<title>Atividade – Regressão Linear em Python – blog-fodao</title>
+<title>Regressão Linear em Python – Blog do Professor</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,11 +20,45 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
@@ -44,11 +76,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -75,82 +107,43 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">blog-fodao</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Atividade – Regressão Linear em Python</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">atividade</div>
-                <div class="quarto-category">python</div>
-                <div class="quarto-category">estatistica</div>
-              </div>
-                  </div>
+      <h1 class="title">Regressão Linear em Python</h1>
+                      </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Lucas C. Vasques </p>
-            </div>
-    </div>
       
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">November 21, 2025</p>
-      </div>
-    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a>
+  <ul class="collapse">
+  <li><a href="#código-utilizado" id="toc-código-utilizado" class="nav-link" data-scroll-target="#código-utilizado">Código utilizado</a></li>
+  <li><a href="#resultado" id="toc-resultado" class="nav-link" data-scroll-target="#resultado">Resultado</a></li>
+  <li><a href="#conclusão" id="toc-conclusão" class="nav-link" data-scroll-target="#conclusão">Conclusão</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -158,77 +151,68 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="o-que-foi-pedido" class="level2">
-<h2 class="anchored" data-anchor-id="o-que-foi-pedido">✔ O que foi pedido</h2>
-<p>Nesta atividade, apliquei o conceito de <strong>regressão linear simples</strong> utilizando Python.<br>
-Foram fornecidos três arquivos:</p>
+<section id="introdução" class="level1">
+<h1>Introdução</h1>
+<p>Neste post apresento a aplicação de regressão linear simples utilizando Python.<br>
+Os valores de entrada estão nos arquivos <code>X.txt</code> e <code>y.txt</code>, e o código utilizado para calcular a inclinação e o intercepto da reta está no arquivo <code>linear.py</code>.</p>
+<hr>
+<section id="código-utilizado" class="level2">
+<h2 class="anchored" data-anchor-id="código-utilizado">Código utilizado</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> ggplot, aes, geom_point, geom_abline</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Carrega os dados dos arquivos</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.loadtxt(<span class="st">"X.txt"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.loadtxt(<span class="st">"y.txt"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Matriz da regressão (coluna de 1s + X)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Xmat <span class="op">=</span> np.column_stack((np.ones(<span class="bu">len</span>(X)), X))</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Cálculo dos coeficientes (método dos mínimos quadrados)</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>beta <span class="op">=</span> np.linalg.inv(Xmat.T <span class="op">@</span> Xmat) <span class="op">@</span> Xmat.T <span class="op">@</span> y</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> beta[<span class="dv">0</span>], beta[<span class="dv">1</span>]</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"a ="</span>, a)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"b ="</span>, b)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepara dados para o gráfico</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">"x"</span>: X, <span class="st">"y"</span>: y})</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Gera o gráfico no estilo ggplot</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> (</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    ggplot(df, aes(<span class="st">"x"</span>, <span class="st">"y"</span>))</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> geom_point()</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> geom_abline(intercept<span class="op">=</span>a, slope<span class="op">=</span>b)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Salva o gráfico</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>plot.save(<span class="st">"grafico.png"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="resultado" class="level2">
+<h2 class="anchored" data-anchor-id="resultado">Resultado</h2>
+<p>O gráfico gerado pelo código acima foi salvo como <code>grafico.png</code><br>
+e está incluído abaixo:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="grafico.png" class="img-fluid figure-img"></p>
+<figcaption>Gráfico da regressão linear</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="conclusão" class="level2">
+<h2 class="anchored" data-anchor-id="conclusão">Conclusão</h2>
+<p>A regressão linear simples permitiu calcular:</p>
 <ul>
-<li><code>linear.py</code> – código principal da regressão<br>
+<li><strong>Intercepto (a):</strong> 373.93<br>
 </li>
-<li><code>X.txt</code> – valores da variável independente X<br>
-</li>
-<li><code>y.txt</code> – valores da variável dependente Y</li>
+<li><strong>Inclinação (b):</strong> 991.63</li>
 </ul>
-<p>O objetivo foi:</p>
-<ol type="1">
-<li>Ler os dados dos arquivos.</li>
-<li>Calcular os coeficientes da regressão (inclinação <strong>b</strong> e intercepto <strong>a</strong>).</li>
-<li>Gerar o gráfico da regressão.</li>
-<li>Interpretar os resultados obtidos.</li>
-</ol>
-<hr>
-</section>
-<section id="execução-automática-do-código" class="level2">
-<h2 class="anchored" data-anchor-id="execução-automática-do-código">✔ Execução automática do código</h2>
-<p>~~~{python} import numpy as np from plotnine import *</p>
-</section>
-<section id="carrega-x-e-y-a-partir-dos-arquivos" class="level1">
-<h1>1. Carrega X e Y a partir dos arquivos</h1>
-<p>X = np.loadtxt(“X.txt”) y = np.loadtxt(“y.txt”)</p>
-</section>
-<section id="cálculo-dos-coeficientes-da-regressão" class="level1">
-<h1>2. Cálculo dos coeficientes da regressão</h1>
-</section>
-<section id="b-covx-y-varx" class="level1">
-<h1>b = cov(X, Y) / var(X)</h1>
-</section>
-<section id="a-médiay---b-médiax" class="level1">
-<h1>a = média(Y) - b * média(X)</h1>
-<p>b = np.cov(X, y, bias=True)[0][1] / np.var(X) a = y.mean() - b * X.mean()</p>
-<p>print(“Intercepto (a):”, a) print(“Inclinação (b):”, b)</p>
-</section>
-<section id="preparando-dados-para-o-gráfico" class="level1">
-<h1>3. Preparando dados para o gráfico</h1>
-<p>df = {“X”: X, “y”: y}</p>
-<p>plot = ( ggplot(df, aes(“X”, “y”)) + geom_point(color=“blue”) + geom_smooth(method=“lm”, color=“red”) + labs(title=“Regressão Linear”, x=“X”, y=“y”) )</p>
-<p>plot ~~~</p>
-<hr>
-<section id="gráfico-gerado-imagem-salva" class="level2">
-<h2 class="anchored" data-anchor-id="gráfico-gerado-imagem-salva">✔ Gráfico gerado (imagem salva)</h2>
-<p>Abaixo está o gráfico salvo em arquivo (por exemplo, <code>grafico.png</code>), incluído no post:</p>
-<p><img src="grafico.png" class="img-fluid"></p>
-<hr>
-</section>
-<section id="resultados-encontrados" class="level2">
-<h2 class="anchored" data-anchor-id="resultados-encontrados">✔ Resultados encontrados</h2>
-<ul>
-<li><strong>Intercepto (a):</strong> 373.934468391305<br>
-</li>
-<li><strong>Inclinação (b):</strong> 991.6278332981968</li>
-</ul>
-<p>Esses valores indicam que, para cada aumento de 1 unidade em X,<br>
-<strong>Y aumenta aproximadamente 991,6 unidades</strong>, mostrando uma forte relação linear positiva entre as variáveis.</p>
-<hr>
-</section>
-<section id="comentários-finais" class="level2">
-<h2 class="anchored" data-anchor-id="comentários-finais">✔ Comentários finais</h2>
-<p>Nesta atividade, consegui:</p>
-<ul>
-<li>Ler dados de arquivos de texto (<code>X.txt</code> e <code>y.txt</code>);</li>
-<li>Aplicar a fórmula da regressão linear simples usando Numpy;</li>
-<li>Gerar um gráfico de dispersão com reta de regressão usando Plotnine;</li>
-<li>Interpretar os coeficientes obtidos e o comportamento dos dados.</li>
-</ul>
+<p>Isso indica que, para cada aumento de 1 unidade em <code>x</code>,<br>
+o valor de <code>y</code> cresce aproximadamente <strong>991.6 unidades</strong>,<br>
+mostrando uma relação linear positiva forte entre as variáveis.</p>
 
 
 </section>
@@ -308,7 +292,7 @@ Foram fornecidos três arquivos:</p>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/your-website-url\.example\.com");
+        var filterRegex = new RegExp("https:\/\/vasqueslucas\.github\.io\/blog-professor\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

@@ -1,57 +1,83 @@
 ---
-title: "Atividade – Mapa de Ônibus com Python e API"
-author: "Lucas C. Vasques"
-date: "2025-11-22"
-categories: [atividade, python, mapas]
-format:
-  html:
-    toc: true
-    code-fold: true
+title: "Mapa de Paradas de Ônibus – Linha 2506"
 ---
 
-## ✔ O que foi pedido
+## Introdução
 
-Nesta atividade, desenvolvi um código em Python para:
+Neste post eu mostro como utilizei a API **Olho Vivo SPTrans** para buscar as paradas da linha **2506** e gerar um **mapa interativo** usando *Folium*.  
+O código lê o token do arquivo `.env`, autentica na API e depois plota cada parada no mapa.
 
-- Consumir uma API de transporte público (SPTrans);
-- Buscar informações sobre uma linha de ônibus específica;
-- Gerar um **mapa interativo** marcando os pontos/paradas dessa linha;
-- Exibir esse mapa em um navegador ou dentro do próprio post.
-
-O foco da atividade é trabalhar com:
-
-- Consumo de API (requisições HTTP);
-- Leitura de dados em JSON;
-- Uso da biblioteca de mapas `folium`;
-- Organização do código em um arquivo `.py`.
+Abaixo está o código completo utilizado, formatado da mesma forma que no blog do meu amigo.
 
 ---
 
-## ✔ Arquivos utilizados
+## Código utilizado
 
-- `onibus_map.py` → arquivo principal com o código em Python;
-- `.env` → arquivo com a chave/token da API SPTrans (não é exibido no repositório);
-- Este `index.qmd` → arquivo do post no blog, com explicação + execução do código.
+```python
+# onibus_map.py
 
-> O arquivo `.env` guarda o token de acesso à API e **não deve ser publicado em repositórios públicos**, apenas usado localmente.
+from folium import Map, Marker
+import os
+import requests
+from dotenv import load_dotenv
+
+# Carrega o token do arquivo .env
+load_dotenv(".env")
+
+s = requests.Session()
+
+# Autenticação na API da SPTrans
+res = s.post(
+    f"http://api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar?token={os.getenv('SPTRANS_TOKEN')}"
+)
+print(res.text)
+
+# Busca as paradas da linha 2506
+res = s.get(
+    "http://api.olhovivo.sptrans.com.br/v2.1/Parada/BuscarParadasPorLinha?codigoLinha=2506"
+)
+paradas = res.json()
+
+# Visualizamos as três primeiras paradas
+paradas[:3]
+
+# Criação do mapa, centralizado em uma das paradas
+m = Map(location=[paradas[3]["py"], paradas[3]["px"]], zoom_start=14)
+
+# Adiciona cada parada como um marcador no mapa
+for i in paradas:
+    Marker(
+        location=[i["py"], i["px"]],
+        popup=i["np"]
+    ).add_to(m)
+
+# Abre o mapa no navegador
+m.show_in_browser()
+```
 
 ---
 
-## ✔ Código principal (arquivo `onibus_map.py`)
+## Resultado
 
-Abaixo está a chamada do script Python que gera o mapa.  
-O código completo está no arquivo `onibus_map.py`.
+O resultado final é um mapa interativo mostrando **todas as paradas da linha 2506**, com cada ponto clicável exibindo o nome da parada.  
+Essa abordagem pode ser usada para qualquer linha da SPTrans, bastando trocar o código da linha.
+## Resultado
 
-```{python}
-#| echo: true
-#| warning: false
-#| message: false
+A figura abaixo mostra todas as paradas da linha 2506 plotadas no mapa, usando Folium.
 
-import onibus_map
+![Mapa das paradas da linha 2506](map.png)
 
-# A função generate_map() é responsável por:
-# - autenticar na API da SPTrans
-# - buscar as paradas da linha
-# - montar o mapa com folium
-# - salvar o arquivo mapa_onibus.html dentro de posts/onibus/
-onibus_map.generate_map()
+---
+
+## Observações
+
+- Certifique-se de ter o arquivo `.env` dentro da pasta **onibus**, contendo seu token desta forma:  
+  ```
+  SPTRANS_TOKEN=seu_token_aqui
+  ```
+- Instale as bibliotecas necessárias:  
+  ```
+  pip install folium python-dotenv requests
+  ```
+
+---

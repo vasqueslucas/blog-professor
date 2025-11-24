@@ -1,1 +1,324 @@
-/* css styles */
+/* ===========================
+   ESTILO GERAL DO SITE
+   =========================== */
+
+   body {
+    background: linear-gradient(180deg, #f9fafb 0%, #f3f4f6 40%, #eef2ff 100%) !important;
+    color: #0f172a;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  
+  main.content {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  main.content .page-layout-article .content,
+  main.content .page-layout-default .content {
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* ===========================
+     NAVBAR – MODERNA
+     =========================== */
+  
+  .navbar {
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid #e5e7eb !important;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+  }
+  
+  .navbar-brand,
+  .navbar-brand:hover {
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #111827 !important;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #475569 !important;
+    font-weight: 500;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    transition: background .15s ease-out, color .15s ease-out;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    background: #e5f0ff;
+    color: #1d4ed8 !important;
+  }
+  
+  .navbar-nav .nav-link.active,
+  .navbar-nav .nav-link.show {
+    background: #2563eb;
+    color: #ffffff !important;
+  }
+  
+  /* ===========================
+     HOME – LISTA DE POSTS
+     =========================== */
+  
+  .quarto-listing .quarto-listing-item {
+    background: #ffffff !important;
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 22px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+    transition: transform .18s ease-out,
+                box-shadow .18s ease-out,
+                border-color .18s ease-out,
+                background .18s ease-out;
+  }
+  
+  .quarto-listing .quarto-listing-item:hover {
+    transform: translateY(-4px);
+    border-color: #2563eb;
+    box-shadow: 0 20px 50px rgba(37, 99, 235, 0.20);
+  }
+  
+  .quarto-listing .listing-title a {
+    color: #0f172a;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.15rem;
+  }
+  
+  .quarto-listing .listing-title a:hover {
+    color: #1d4ed8;
+  }
+  
+  .quarto-listing .listing-date,
+  .quarto-listing .listing-categories {
+    font-size: 0.84rem;
+    color: #6b7280;
+  }
+  
+  .quarto-listing .listing-categories .listing-category {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #e0f2fe;
+    color: #0369a1;
+    font-size: 0.78rem;
+    margin-right: 6px;
+  }
+  
+  /* ===========================
+     TÍTULOS
+     =========================== */
+  
+  h1, h2, h3, h4 {
+    font-weight: 700 !important;
+    letter-spacing: 0.02em;
+    color: #0f172a;
+  }
+  
+  h1.title {
+    font-size: 2.4rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .quarto-title-meta,
+  .quarto-title-block .subtitle {
+    color: #6b7280;
+  }
+  
+  /* ===========================
+     DENTRO DOS POSTS – TEXTO
+     =========================== */
+  
+  .page-layout-article .content p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #111827;
+    margin-bottom: 1rem;
+  }
+  
+  .page-layout-article .content ul,
+  .page-layout-article .content ol {
+    padding-left: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .page-layout-article .content li {
+    margin-bottom: 0.3rem;
+  }
+  
+  .page-layout-article .content a {
+    color: #2563eb;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    font-weight: 500;
+  }
+  
+  .page-layout-article .content a:hover {
+    color: #1d4ed8;
+    text-decoration-thickness: 2px;
+  }
+  
+  .page-layout-article .content strong {
+    color: #0f172a;
+    font-weight: 700;
+  }
+  
+  /* Blockquote estilizada */
+  .page-layout-article .content blockquote {
+    margin: 1.2rem 0;
+    padding: 0.9rem 1.2rem;
+    border-left: 4px solid #2563eb;
+    background: #eff6ff;
+    color: #111827;
+    border-radius: 0.5rem;
+  }
+  
+  /* Imagens */
+  .page-layout-article .content img {
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.20);
+    margin: 1rem 0;
+  }
+  
+  /* Separadores */
+  .page-layout-article .content hr {
+    border: 0;
+    border-top: 1px solid #e5e7eb;
+    margin: 2rem 0;
+  }
+  
+  /* ===========================
+     TABELAS
+     =========================== */
+  
+  .page-layout-article .content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+  }
+  
+  .page-layout-article .content table thead {
+    background: #eff6ff;
+  }
+  
+  .page-layout-article .content table th,
+  .page-layout-article .content table td {
+    border: 1px solid #e5e7eb;
+    padding: 0.55rem 0.75rem;
+  }
+  
+  .page-layout-article .content table th {
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  /* ===========================
+     CÓDIGO – INLINE E BLOCOS
+     =========================== */
+  
+  /* Inline code */
+  .page-layout-article .content code:not(pre code) {
+    background: #f3f4f6;
+    padding: 3px 6px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    color: #0f172a;
+  }
+  
+  /* Blocos de código modernos */
+  pre {
+    background: #f8fafc !important;
+    color: #1e293b !important;
+    border-radius: 14px !important;
+    padding: 1rem 1.2rem !important;
+    border: 1px solid #e2e8f0 !important;
+    font-size: 0.92rem !important;
+    overflow-x: auto;
+    line-height: 1.55;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  }
+  
+  pre code {
+    background: transparent !important;
+    color: inherit !important;
+  }
+  
+  /* Syntax Highlight */
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: #64748b;
+  }
+  
+  .token.punctuation {
+    color: #334155;
+  }
+  
+  .token.selector,
+  .token.tag {
+    color: #0ea5e9;
+  }
+  
+  .token.property,
+  .token.class-name {
+    color: #2563eb;
+  }
+  
+  .token.boolean,
+  .token.number {
+    color: #d946ef;
+  }
+  
+  .token.string,
+  .token.char {
+    color: #16a34a;
+  }
+  
+  .token.operator,
+  .token.entity,
+  .token.url {
+    color: #7c3aed;
+  }
+  
+  .token.keyword,
+  .token.atrule,
+  .token.attr-value {
+    color: #db2777;
+  }
+  
+  /* ===========================
+     LINKS GERAIS
+     =========================== */
+  
+  a {
+    color: #2563eb;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #1d4ed8;
+    text-shadow: 0 0 8px rgba(37, 99, 235, 0.25);
+  }
+  
+  /* ===========================
+     RODAPÉ
+     =========================== */
+  
+  footer {
+    background: transparent !important;
+    text-align: center !important;
+    padding: 26px 0 !important;
+    opacity: 0.75;
+    font-size: 0.9rem;
+    color: #6b7280;
+  }
+  
+  footer hr {
+    border-color: #e5e7eb;
+  }
+  

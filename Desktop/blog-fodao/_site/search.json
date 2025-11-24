@@ -9,106 +9,106 @@
   {
     "objectID": "posts/regressao/index.html",
     "href": "posts/regressao/index.html",
-    "title": "Atividade – Regressão Linear em Python",
+    "title": "Regressão Linear em Python",
     "section": "",
-    "text": "Nesta atividade, apliquei o conceito de regressão linear simples utilizando Python.\nForam fornecidos três arquivos:\n\nlinear.py – código principal da regressão\n\nX.txt – valores da variável independente X\n\ny.txt – valores da variável dependente Y\n\nO objetivo foi:\n\nLer os dados dos arquivos.\nCalcular os coeficientes da regressão (inclinação b e intercepto a).\nGerar o gráfico da regressão.\nInterpretar os resultados obtidos."
+    "text": "Neste post apresento a aplicação de regressão linear simples utilizando Python.\nOs valores de entrada estão nos arquivos X.txt e y.txt, e o código utilizado para calcular a inclinação e o intercepto da reta está no arquivo linear.py.\n\n\n\nimport numpy as np\nimport pandas as pd\nfrom plotnine import ggplot, aes, geom_point, geom_abline\n\n# Carrega os dados dos arquivos\nX = np.loadtxt(\"X.txt\")\ny = np.loadtxt(\"y.txt\")\n\n# Matriz da regressão (coluna de 1s + X)\nXmat = np.column_stack((np.ones(len(X)), X))\n\n# Cálculo dos coeficientes (método dos mínimos quadrados)\nbeta = np.linalg.inv(Xmat.T @ Xmat) @ Xmat.T @ y\na, b = beta[0], beta[1]\n\nprint(\"a =\", a)\nprint(\"b =\", b)\n\n# Prepara dados para o gráfico\ndf = pd.DataFrame({\"x\": X, \"y\": y})\n\n# Gera o gráfico no estilo ggplot\nplot = (\n    ggplot(df, aes(\"x\", \"y\"))\n    + geom_point()\n    + geom_abline(intercept=a, slope=b)\n)\n\n# Salva o gráfico\nplot.save(\"grafico.png\")\n\n\n\n\nO gráfico gerado pelo código acima foi salvo como grafico.png\ne está incluído abaixo:\n\n\n\nGráfico da regressão linear\n\n\n\n\n\n\nA regressão linear simples permitiu calcular:\n\nIntercepto (a): 373.93\n\nInclinação (b): 991.63\n\nIsso indica que, para cada aumento de 1 unidade em x,\no valor de y cresce aproximadamente 991.6 unidades,\nmostrando uma relação linear positiva forte entre as variáveis."
   },
   {
-    "objectID": "posts/regressao/index.html#o-que-foi-pedido",
-    "href": "posts/regressao/index.html#o-que-foi-pedido",
-    "title": "Atividade – Regressão Linear em Python",
+    "objectID": "posts/regressao/index.html#código-utilizado",
+    "href": "posts/regressao/index.html#código-utilizado",
+    "title": "Regressão Linear em Python",
     "section": "",
-    "text": "Nesta atividade, apliquei o conceito de regressão linear simples utilizando Python.\nForam fornecidos três arquivos:\n\nlinear.py – código principal da regressão\n\nX.txt – valores da variável independente X\n\ny.txt – valores da variável dependente Y\n\nO objetivo foi:\n\nLer os dados dos arquivos.\nCalcular os coeficientes da regressão (inclinação b e intercepto a).\nGerar o gráfico da regressão.\nInterpretar os resultados obtidos."
+    "text": "import numpy as np\nimport pandas as pd\nfrom plotnine import ggplot, aes, geom_point, geom_abline\n\n# Carrega os dados dos arquivos\nX = np.loadtxt(\"X.txt\")\ny = np.loadtxt(\"y.txt\")\n\n# Matriz da regressão (coluna de 1s + X)\nXmat = np.column_stack((np.ones(len(X)), X))\n\n# Cálculo dos coeficientes (método dos mínimos quadrados)\nbeta = np.linalg.inv(Xmat.T @ Xmat) @ Xmat.T @ y\na, b = beta[0], beta[1]\n\nprint(\"a =\", a)\nprint(\"b =\", b)\n\n# Prepara dados para o gráfico\ndf = pd.DataFrame({\"x\": X, \"y\": y})\n\n# Gera o gráfico no estilo ggplot\nplot = (\n    ggplot(df, aes(\"x\", \"y\"))\n    + geom_point()\n    + geom_abline(intercept=a, slope=b)\n)\n\n# Salva o gráfico\nplot.save(\"grafico.png\")"
   },
   {
-    "objectID": "posts/regressao/index.html#execução-automática-do-código",
-    "href": "posts/regressao/index.html#execução-automática-do-código",
-    "title": "Atividade – Regressão Linear em Python",
-    "section": "✔ Execução automática do código",
-    "text": "✔ Execução automática do código\n~~~{python} import numpy as np from plotnine import *"
+    "objectID": "posts/regressao/index.html#resultado",
+    "href": "posts/regressao/index.html#resultado",
+    "title": "Regressão Linear em Python",
+    "section": "",
+    "text": "O gráfico gerado pelo código acima foi salvo como grafico.png\ne está incluído abaixo:\n\n\n\nGráfico da regressão linear"
   },
   {
-    "objectID": "posts/regressao/index.html#gráfico-gerado-imagem-salva",
-    "href": "posts/regressao/index.html#gráfico-gerado-imagem-salva",
-    "title": "Atividade – Regressão Linear em Python",
-    "section": "✔ Gráfico gerado (imagem salva)",
-    "text": "✔ Gráfico gerado (imagem salva)\nAbaixo está o gráfico salvo em arquivo (por exemplo, grafico.png), incluído no post:"
-  },
-  {
-    "objectID": "posts/regressao/index.html#resultados-encontrados",
-    "href": "posts/regressao/index.html#resultados-encontrados",
-    "title": "Atividade – Regressão Linear em Python",
-    "section": "✔ Resultados encontrados",
-    "text": "✔ Resultados encontrados\n\nIntercepto (a): 373.934468391305\n\nInclinação (b): 991.6278332981968\n\nEsses valores indicam que, para cada aumento de 1 unidade em X,\nY aumenta aproximadamente 991,6 unidades, mostrando uma forte relação linear positiva entre as variáveis."
-  },
-  {
-    "objectID": "posts/regressao/index.html#comentários-finais",
-    "href": "posts/regressao/index.html#comentários-finais",
-    "title": "Atividade – Regressão Linear em Python",
-    "section": "✔ Comentários finais",
-    "text": "✔ Comentários finais\nNesta atividade, consegui:\n\nLer dados de arquivos de texto (X.txt e y.txt);\nAplicar a fórmula da regressão linear simples usando Numpy;\nGerar um gráfico de dispersão com reta de regressão usando Plotnine;\nInterpretar os coeficientes obtidos e o comportamento dos dados."
+    "objectID": "posts/regressao/index.html#conclusão",
+    "href": "posts/regressao/index.html#conclusão",
+    "title": "Regressão Linear em Python",
+    "section": "",
+    "text": "A regressão linear simples permitiu calcular:\n\nIntercepto (a): 373.93\n\nInclinação (b): 991.63\n\nIsso indica que, para cada aumento de 1 unidade em x,\no valor de y cresce aproximadamente 991.6 unidades,\nmostrando uma relação linear positiva forte entre as variáveis."
   },
   {
     "objectID": "posts/post-with-code/index.html",
     "href": "posts/post-with-code/index.html",
-    "title": "Atividade – Mapa de Ônibus com Python e API",
+    "title": "Mapa de Paradas de Ônibus – Linha 2506",
     "section": "",
-    "text": "Nesta atividade, desenvolvi um código em Python para:\n\nConsumir uma API de transporte público (SPTrans);\nBuscar informações sobre uma linha de ônibus específica;\nGerar um mapa interativo marcando os pontos/paradas dessa linha;\nExibir esse mapa em um navegador ou dentro do próprio post.\n\nO foco da atividade é trabalhar com:\n\nConsumo de API (requisições HTTP);\nLeitura de dados em JSON;\nUso da biblioteca de mapas folium;\nOrganização do código em um arquivo .py."
+    "text": "Neste post eu mostro como utilizei a API Olho Vivo SPTrans para buscar as paradas da linha 2506 e gerar um mapa interativo usando Folium.\nO código lê o token do arquivo .env, autentica na API e depois plota cada parada no mapa.\nAbaixo está o código completo utilizado, formatado da mesma forma que no blog do meu amigo."
   },
   {
-    "objectID": "posts/post-with-code/index.html#o-que-foi-pedido",
-    "href": "posts/post-with-code/index.html#o-que-foi-pedido",
-    "title": "Atividade – Mapa de Ônibus com Python e API",
+    "objectID": "posts/post-with-code/index.html#introdução",
+    "href": "posts/post-with-code/index.html#introdução",
+    "title": "Mapa de Paradas de Ônibus – Linha 2506",
     "section": "",
-    "text": "Nesta atividade, desenvolvi um código em Python para:\n\nConsumir uma API de transporte público (SPTrans);\nBuscar informações sobre uma linha de ônibus específica;\nGerar um mapa interativo marcando os pontos/paradas dessa linha;\nExibir esse mapa em um navegador ou dentro do próprio post.\n\nO foco da atividade é trabalhar com:\n\nConsumo de API (requisições HTTP);\nLeitura de dados em JSON;\nUso da biblioteca de mapas folium;\nOrganização do código em um arquivo .py."
+    "text": "Neste post eu mostro como utilizei a API Olho Vivo SPTrans para buscar as paradas da linha 2506 e gerar um mapa interativo usando Folium.\nO código lê o token do arquivo .env, autentica na API e depois plota cada parada no mapa.\nAbaixo está o código completo utilizado, formatado da mesma forma que no blog do meu amigo."
   },
   {
-    "objectID": "posts/post-with-code/index.html#arquivos-utilizados",
-    "href": "posts/post-with-code/index.html#arquivos-utilizados",
-    "title": "Atividade – Mapa de Ônibus com Python e API",
-    "section": "✔ Arquivos utilizados",
-    "text": "✔ Arquivos utilizados\n\nonibus_map.py → arquivo principal com o código em Python;\n.env → arquivo com a chave/token da API SPTrans (não é exibido no repositório);\nEste index.qmd → arquivo do post no blog, com explicação + execução do código.\n\n\nO arquivo .env guarda o token de acesso à API e não deve ser publicado em repositórios públicos, apenas usado localmente."
+    "objectID": "posts/post-with-code/index.html#código-utilizado",
+    "href": "posts/post-with-code/index.html#código-utilizado",
+    "title": "Mapa de Paradas de Ônibus – Linha 2506",
+    "section": "Código utilizado",
+    "text": "Código utilizado\n# onibus_map.py\n\nfrom folium import Map, Marker\nimport os\nimport requests\nfrom dotenv import load_dotenv\n\n# Carrega o token do arquivo .env\nload_dotenv(\".env\")\n\ns = requests.Session()\n\n# Autenticação na API da SPTrans\nres = s.post(\n    f\"http://api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar?token={os.getenv('SPTRANS_TOKEN')}\"\n)\nprint(res.text)\n\n# Busca as paradas da linha 2506\nres = s.get(\n    \"http://api.olhovivo.sptrans.com.br/v2.1/Parada/BuscarParadasPorLinha?codigoLinha=2506\"\n)\nparadas = res.json()\n\n# Visualizamos as três primeiras paradas\nparadas[:3]\n\n# Criação do mapa, centralizado em uma das paradas\nm = Map(location=[paradas[3][\"py\"], paradas[3][\"px\"]], zoom_start=14)\n\n# Adiciona cada parada como um marcador no mapa\nfor i in paradas:\n    Marker(\n        location=[i[\"py\"], i[\"px\"]],\n        popup=i[\"np\"]\n    ).add_to(m)\n\n# Abre o mapa no navegador\nm.show_in_browser()"
   },
   {
-    "objectID": "posts/post-with-code/index.html#código-principal-arquivo-onibus_map.py",
-    "href": "posts/post-with-code/index.html#código-principal-arquivo-onibus_map.py",
-    "title": "Atividade – Mapa de Ônibus com Python e API",
-    "section": "✔ Código principal (arquivo onibus_map.py)",
-    "text": "✔ Código principal (arquivo onibus_map.py)\nAbaixo está a chamada do script Python que gera o mapa.\nO código completo está no arquivo onibus_map.py.\n#| echo: true #| warning: false #| message: false\nimport onibus_map"
+    "objectID": "posts/post-with-code/index.html#resultado",
+    "href": "posts/post-with-code/index.html#resultado",
+    "title": "Mapa de Paradas de Ônibus – Linha 2506",
+    "section": "Resultado",
+    "text": "Resultado\nO resultado final é um mapa interativo mostrando todas as paradas da linha 2506, com cada ponto clicável exibindo o nome da parada.\nEssa abordagem pode ser usada para qualquer linha da SPTrans, bastando trocar o código da linha. ## Resultado\nA figura abaixo mostra todas as paradas da linha 2506 plotadas no mapa, usando Folium.\n\n\n\nMapa das paradas da linha 2506"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#observações",
+    "href": "posts/post-with-code/index.html#observações",
+    "title": "Mapa de Paradas de Ônibus – Linha 2506",
+    "section": "Observações",
+    "text": "Observações\n\nCertifique-se de ter o arquivo .env dentro da pasta onibus, contendo seu token desta forma:\nSPTRANS_TOKEN=seu_token_aqui\nInstale as bibliotecas necessárias:\npip install folium python-dotenv requests"
   },
   {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
-    "title": "Atividade – Cotação do Dólar com API do Banco Central",
+    "title": "Cotação do Dólar – Agosto de 2022",
     "section": "",
-    "text": "Nesta atividade, desenvolvi um código em Python para:\n\nConsumir a API PTAX do Banco Central do Brasil;\nBuscar a cotação do dólar (USD/BRL) em um período de datas;\nOrganizar os dados retornados em formato JSON;\nGerar uma tabela e um gráfico de linha mostrando a variação da cotação;\nSalvar o gráfico em arquivo e exibir o resultado.\n\nO foco da atividade é trabalhar com:\n\nRequisições HTTP (requests);\nLeitura e tratamento de dados em JSON;\nManipulação de datas;\nVisualização de dados com gráficos em Python."
+    "text": "A primeira atividade deste projeto foi estudar o uso de APIs usando o serviço Olinda do Banco Central, para consultar a cotação do dólar em certo período.\nMais especificamente, o objetivo aqui foi: dado um mês e um ano, construir um gráfico das cotações do dólar naquele mês, usando o endpoint:\n/CotacaoDolarPeriodo\nda API do Banco Central.\n\n\n\nO desafio proposto foi:\n\nDado um mês/ano, consultar as cotações do dólar naquele período e gerar um gráfico mostrando a cotação de venda ao longo do tempo.\n\nA API espera duas informações:\n\ndataInicial\ndataFinalCotacao\n\nambas no formato MM-DD-YYYY.\nPor isso, a primeira parte do código é só transformar o texto do mês (por exemplo \"082022\") em duas datas: primeiro e último dia do mês.\n\n\n\n\nA função abaixo recebe uma string no formato \"mmAAAA\" (por exemplo 082022 para agosto de 2022) e:\n\nCalcula o primeiro e o último dia do mês,\nMonta a URL correta da API,\nFaz a requisição com requests,\nColoca o resultado em um DataFrame do pandas,\nGera o gráfico com plotly.express.\n\nimport calendar\nfrom datetime import datetime\nimport requests\nimport pandas as pd\nimport plotly.express as px\n\nURL_BASE = (\n    \"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/\"\n    \"CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)\"\n)\n\ndef datas_mes(mes_ano: str) -&gt; tuple[datetime, datetime]:\n    \"\"\"\n    Recebe uma string no formato 'mmAAAA' (ex.: '082022')\n    e devolve (data_inicial, data_final) daquele mês.\n    \"\"\"\n    data_inicial = datetime.strptime(mes_ano, \"%m%Y\")\n    ultimo_dia = calendar.monthrange(data_inicial.year, data_inicial.month)[1]\n    data_final = data_inicial.replace(day=ultimo_dia)\n    return data_inicial, data_final\n\n\ndef montar_url(data_inicial: datetime, data_final: datetime) -&gt; str:\n    \"\"\"\n    Monta a URL da API, com as datas no formato exigido (MM-DD-YYYY).\n    \"\"\"\n    di = data_inicial.strftime(\"%m-%d-%Y\")\n    df = data_final.strftime(\"%m-%d-%Y\")\n\n    url = (\n        f\"{URL_BASE}\"\n        f\"?@dataInicial='{di}'\"\n        f\"&@dataFinalCotacao='{df}'\"\n        f\"&$top=100&$format=json\"\n    )\n    return url\n\n\ndef grafico_cotacao(mes_ano: str):\n    \"\"\"\n    Consulta a API do Banco Central e gera um gráfico com a cotação de venda do dólar.\n    Também salva a figura como 'grafico_cotacao_dolar.png'.\n    \"\"\"\n    data_inicial, data_final = datas_mes(mes_ano)\n    url = montar_url(data_inicial, data_final)\n\n    res = requests.get(url)\n    res.raise_for_status()\n\n    dados = res.json()\n\n    if not dados.get(\"value\"):\n        print(\"Nenhum dado encontrado para o período informado.\")\n        return\n\n    # Colocando os dados em um DataFrame\n    df = pd.DataFrame(dados[\"value\"])\n\n    # Convertendo a coluna de data para datetime\n    df[\"dataHoraCotacao\"] = pd.to_datetime(df[\"dataHoraCotacao\"])\n\n    # Construindo o gráfico\n    fig = px.line(\n        df,\n        x=\"dataHoraCotacao\",\n        y=\"cotacaoVenda\",\n        title=f\"Cotação do Dólar - {data_inicial.strftime('%B/%Y').capitalize()}\",\n        labels={\n            \"dataHoraCotacao\": \"Data\",\n            \"cotacaoVenda\": \"Cotação de venda (R$)\",\n        },\n        markers=True,\n    )\n\n    # Salva a figura como imagem para usar no blog\n    fig.write_image(\"grafico_cotacao_dolar.png\")\n\n    # Mostra o gráfico interativo também\n    fig.show()\n\n\nif __name__ == \"__main__\":\n    # Exemplo: Agosto de 2022\n    grafico_cotacao(\"082022\")\n\n\n\n\nExecutando o script, o programa gera um gráfico da cotação de venda do dólar ao longo do mês escolhido.\nA figura gerada foi salva como grafico_cotacao_dolar.png na mesma pasta do projeto, e abaixo ela é exibida no post:\n\n\n\nGráfico da cotação do dólar em Agosto de 2022\n\n\nPodemos ver a variação diária da cotação e ter uma ideia de como o dólar se comportou naquele período.\n\n\n\n\n\nÉ preciso instalar as bibliotecas usadas:\n\npip install requests pandas plotly kaleido\n\nO kaleido é usado pelo plotly para conseguir exportar o gráfico como PNG.\n\n\nPara trocar o mês, basta mudar a chamada:\n\ngrafico_cotacao(\"082022\")\npor outro mês/ano, como:\ngrafico_cotacao(\"052014\")\ngrafico_cotacao(\"012021\")"
   },
   {
-    "objectID": "posts/welcome/index.html#o-que-foi-pedido",
-    "href": "posts/welcome/index.html#o-que-foi-pedido",
-    "title": "Atividade – Cotação do Dólar com API do Banco Central",
+    "objectID": "posts/welcome/index.html#o-desafio",
+    "href": "posts/welcome/index.html#o-desafio",
+    "title": "Cotação do Dólar – Agosto de 2022",
     "section": "",
-    "text": "Nesta atividade, desenvolvi um código em Python para:\n\nConsumir a API PTAX do Banco Central do Brasil;\nBuscar a cotação do dólar (USD/BRL) em um período de datas;\nOrganizar os dados retornados em formato JSON;\nGerar uma tabela e um gráfico de linha mostrando a variação da cotação;\nSalvar o gráfico em arquivo e exibir o resultado.\n\nO foco da atividade é trabalhar com:\n\nRequisições HTTP (requests);\nLeitura e tratamento de dados em JSON;\nManipulação de datas;\nVisualização de dados com gráficos em Python."
+    "text": "O desafio proposto foi:\n\nDado um mês/ano, consultar as cotações do dólar naquele período e gerar um gráfico mostrando a cotação de venda ao longo do tempo.\n\nA API espera duas informações:\n\ndataInicial\ndataFinalCotacao\n\nambas no formato MM-DD-YYYY.\nPor isso, a primeira parte do código é só transformar o texto do mês (por exemplo \"082022\") em duas datas: primeiro e último dia do mês."
   },
   {
-    "objectID": "posts/welcome/index.html#arquivos-utilizados",
-    "href": "posts/welcome/index.html#arquivos-utilizados",
-    "title": "Atividade – Cotação do Dólar com API do Banco Central",
-    "section": "✔ Arquivos utilizados",
-    "text": "✔ Arquivos utilizados\n\ncotacao_dolar.py → arquivo principal com o código em Python;\nEste index.qmd → arquivo do post no blog, com explicação + execução do código.\n\n\nA API PTAX do Banco Central não exige token de autenticação, mas exige cuidado com o formato das datas na URL (padrão mm-dd-aaaa)."
+    "objectID": "posts/welcome/index.html#o-código",
+    "href": "posts/welcome/index.html#o-código",
+    "title": "Cotação do Dólar – Agosto de 2022",
+    "section": "",
+    "text": "A função abaixo recebe uma string no formato \"mmAAAA\" (por exemplo 082022 para agosto de 2022) e:\n\nCalcula o primeiro e o último dia do mês,\nMonta a URL correta da API,\nFaz a requisição com requests,\nColoca o resultado em um DataFrame do pandas,\nGera o gráfico com plotly.express.\n\nimport calendar\nfrom datetime import datetime\nimport requests\nimport pandas as pd\nimport plotly.express as px\n\nURL_BASE = (\n    \"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/\"\n    \"CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)\"\n)\n\ndef datas_mes(mes_ano: str) -&gt; tuple[datetime, datetime]:\n    \"\"\"\n    Recebe uma string no formato 'mmAAAA' (ex.: '082022')\n    e devolve (data_inicial, data_final) daquele mês.\n    \"\"\"\n    data_inicial = datetime.strptime(mes_ano, \"%m%Y\")\n    ultimo_dia = calendar.monthrange(data_inicial.year, data_inicial.month)[1]\n    data_final = data_inicial.replace(day=ultimo_dia)\n    return data_inicial, data_final\n\n\ndef montar_url(data_inicial: datetime, data_final: datetime) -&gt; str:\n    \"\"\"\n    Monta a URL da API, com as datas no formato exigido (MM-DD-YYYY).\n    \"\"\"\n    di = data_inicial.strftime(\"%m-%d-%Y\")\n    df = data_final.strftime(\"%m-%d-%Y\")\n\n    url = (\n        f\"{URL_BASE}\"\n        f\"?@dataInicial='{di}'\"\n        f\"&@dataFinalCotacao='{df}'\"\n        f\"&$top=100&$format=json\"\n    )\n    return url\n\n\ndef grafico_cotacao(mes_ano: str):\n    \"\"\"\n    Consulta a API do Banco Central e gera um gráfico com a cotação de venda do dólar.\n    Também salva a figura como 'grafico_cotacao_dolar.png'.\n    \"\"\"\n    data_inicial, data_final = datas_mes(mes_ano)\n    url = montar_url(data_inicial, data_final)\n\n    res = requests.get(url)\n    res.raise_for_status()\n\n    dados = res.json()\n\n    if not dados.get(\"value\"):\n        print(\"Nenhum dado encontrado para o período informado.\")\n        return\n\n    # Colocando os dados em um DataFrame\n    df = pd.DataFrame(dados[\"value\"])\n\n    # Convertendo a coluna de data para datetime\n    df[\"dataHoraCotacao\"] = pd.to_datetime(df[\"dataHoraCotacao\"])\n\n    # Construindo o gráfico\n    fig = px.line(\n        df,\n        x=\"dataHoraCotacao\",\n        y=\"cotacaoVenda\",\n        title=f\"Cotação do Dólar - {data_inicial.strftime('%B/%Y').capitalize()}\",\n        labels={\n            \"dataHoraCotacao\": \"Data\",\n            \"cotacaoVenda\": \"Cotação de venda (R$)\",\n        },\n        markers=True,\n    )\n\n    # Salva a figura como imagem para usar no blog\n    fig.write_image(\"grafico_cotacao_dolar.png\")\n\n    # Mostra o gráfico interativo também\n    fig.show()\n\n\nif __name__ == \"__main__\":\n    # Exemplo: Agosto de 2022\n    grafico_cotacao(\"082022\")"
   },
   {
-    "objectID": "posts/welcome/index.html#código-principal-arquivo-cotacao_dolar.py",
-    "href": "posts/welcome/index.html#código-principal-arquivo-cotacao_dolar.py",
-    "title": "Atividade – Cotação do Dólar com API do Banco Central",
-    "section": "✔ Código principal (arquivo cotacao_dolar.py)",
-    "text": "✔ Código principal (arquivo cotacao_dolar.py)\nAbaixo está a chamada do script Python que faz todo o processamento.\nO código completo está no arquivo cotacao_dolar.py, na mesma pasta deste post.\n#| echo: true #| warning: false #| message: false\nimport cotacao_dolar"
+    "objectID": "posts/welcome/index.html#os-resultados",
+    "href": "posts/welcome/index.html#os-resultados",
+    "title": "Cotação do Dólar – Agosto de 2022",
+    "section": "",
+    "text": "Executando o script, o programa gera um gráfico da cotação de venda do dólar ao longo do mês escolhido.\nA figura gerada foi salva como grafico_cotacao_dolar.png na mesma pasta do projeto, e abaixo ela é exibida no post:\n\n\n\nGráfico da cotação do dólar em Agosto de 2022\n\n\nPodemos ver a variação diária da cotação e ter uma ideia de como o dólar se comportou naquele período."
+  },
+  {
+    "objectID": "posts/welcome/index.html#observações",
+    "href": "posts/welcome/index.html#observações",
+    "title": "Cotação do Dólar – Agosto de 2022",
+    "section": "",
+    "text": "É preciso instalar as bibliotecas usadas:\n\npip install requests pandas plotly kaleido\n\nO kaleido é usado pelo plotly para conseguir exportar o gráfico como PNG.\n\n\nPara trocar o mês, basta mudar a chamada:\n\ngrafico_cotacao(\"082022\")\npor outro mês/ano, como:\ngrafico_cotacao(\"052014\")\ngrafico_cotacao(\"012021\")"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "blog-fodao",
     "section": "",
-    "text": "Atividade – Mapa de Ônibus com Python e API\n\n\n\natividade\n\npython\n\nmapas\n\n\n\n\n\n\n\n\n\nNov 22, 2025\n\n\nLucas C. Vasques\n\n\n\n\n\n\n\n\n\n\n\n\nAtividade – Cotação do Dólar com API do Banco Central\n\n\n\natividade\n\npython\n\napi\n\neconomia\n\n\n\n\n\n\n\n\n\nNov 22, 2025\n\n\nLucas C. Vasques\n\n\n\n\n\n\n\n\n\n\n\n\nAtividade – Regressão Linear em Python\n\n\n\natividade\n\npython\n\nestatistica\n\n\n\n\n\n\n\n\n\nNov 21, 2025\n\n\nLucas C. Vasques\n\n\n\n\n\nNo matching items"
+    "text": "Mapa de Paradas de Ônibus – Linha 2506\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCotação do Dólar – Agosto de 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRegressão Linear em Python\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
